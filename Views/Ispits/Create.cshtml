@@ -1,0 +1,51 @@
+﻿@model PIN_Projekt.Models.Ispit
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ispit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ocijena" class="control-label"></label>
+                <input asp-for="Ocijena" class="form-control" />
+                <span asp-validation-for="Ocijena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojBodova" class="control-label"></label>
+                <input asp-for="BrojBodova" class="form-control" />
+                <span asp-validation-for="BrojBodova" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatumPolaganja" class="control-label"></label>
+                <input asp-for="DatumPolaganja" class="form-control" />
+                <span asp-validation-for="DatumPolaganja" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentId" class="control-label"></label>
+                <select asp-for="StudentId" class ="form-control" asp-items="ViewBag.StudentId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PredmetId" class="control-label"></label>
+                <select asp-for="PredmetId" class ="form-control" asp-items="ViewBag.PredmetId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
